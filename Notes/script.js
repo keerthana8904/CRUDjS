@@ -1,7 +1,7 @@
 let add = document.getElementById("btn");
 let lists = document.getElementById("lists")
 let notes = [];
- let found =[];
+let found =[]; //to render searched elements
 
 // create
 function craeteNote(){
@@ -26,13 +26,15 @@ function craeteNote(){
     console.log(notes)
    
     render.call(notes);
+
     title.value = "";
     text.value = "";
     
 }
 
 function seacrch(){
-// take the title
+    
+    // search by title
     let searchEle = document.getElementById("search");
     let searchValue = searchEle.value;
     console.log(searchValue);
@@ -43,15 +45,15 @@ function seacrch(){
         return;
     }
     
-// search by letters
+    // search by letters
    let found = notes.filter((note)=>note.title.toLowerCase().includes(searchValue.toLowerCase()));
    console.log(found);
+
    if(found.length === 0){
     render.call(notes); 
      alert(`note not found`);
-     
-
-   }else{
+   }
+   else{
     render.call(found);
    }
    

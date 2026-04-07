@@ -1,0 +1,91 @@
+body{       
+    padding: 0px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#btn{
+    margin-top: 20px;
+    background: #eaf1bb;
+    border: none;
+    border-radius: 20px;;
+}
+
+#titleMain{
+    margin-bottom: 15px;
+}
+
+.oneNote{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    border-radius: 20px;
+    padding: 20px;
+    color: green;
+    background: #e8d8d8;   
+}
+
+.btns{
+    position: relative;
+    display: inline-block;
+    justify-content: flex-start;
+  
+}
+
+.dltbtn{
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 20px;
+    background:rgb(244, 60, 60);
+    color: azure;
+    font-size: 0.7em;;
+    margin: 2px; 
+}
+
+.updbtn{
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 20px;
+    color: aliceblue;
+    background:rgb(138, 103, 208);
+    font-size: 0.7em;
+}
+
+.smaller{
+    font-size: 8px;
+    color: black;
+    margin-bottom: 10px; 
+}
+
+.small{
+    font-size: 14px;
+    color: rgb(34, 8, 66);
+    word-break: break-word;
+    white-space: pre-wrap;
+    margin-top: 12px;;
+    line-height: 1.1; 
+}
+
+.large{
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+}
+
+#notes{
+    width: 400px;
+}
+
+#btn{
+    position: relative;
+    bottom: 20px;
+    width: 15vwvw;
+}
+

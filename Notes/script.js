@@ -1,12 +1,12 @@
 let add = document.getElementById("btn");
 let lists = document.getElementById("lists")
 let notes = [];
+ let found =[];
 
 // create
 function craeteNote(){
     let title = document.getElementById("title");
     let titleVal = title.value.trim();
-    
     let text = document.getElementById("notes");
     let textCon = text.value.trim();
     
@@ -25,18 +25,46 @@ function craeteNote(){
     notes.push(newObj);
     console.log(notes)
    
-    render();
+    render.call(notes);
     title.value = "";
     text.value = "";
     
 }
 
-// render
+function seacrch(){
+// take the title
+    let searchEle = document.getElementById("search");
+    let searchValue = searchEle.value;
+    console.log(searchValue);
+
+    if(searchValue.trim() === ""){
+        render.call(notes);
+        alert(`please enter title to be seach`)
+    }
+    
+// search by letters
+   let found = notes.filter((note)=>note.title.toLowerCase().includes(searchValue.toLowerCase()));
+   console.log(found);
+   if(found.length === 0){
+    render.call(notes); 
+     alert(`note not found`);
+     
+
+   }else{
+    render.call(found);
+   }
+
+   
+}
+
+let searchBtn = document.getElementById("searchBar");
+searchBtn.addEventListener("click",seacrch);
+
 
 function render(){
     lists.innerHTML = "";
     
-    notes.forEach((note,index)=>{
+    this.forEach((note,index)=>{
 
        // child each container 
         let oneNote = document.createElement("div");
@@ -75,40 +103,29 @@ function render(){
 
         upd.addEventListener("click",()=>{
             console.log(" update button clicked");
-            let newTitle = prompt(`Update the Title:`,note.title);
-            let newValue = prompt(`Update the Note:`,note.value);
+            let newValue = prompt(`Update the value:`,note.value);
 
             let now = new Date();
-        
-            if(newTitle  && newTitle.trim() !== ""){
-                note.title = newTitle;
+            if(newValue  && newValue.trim() !== ""){
+             note.value = newValue;
+             note.date = now.toLocaleString()
             };
 
-            if(newValue  && newValue.trim() !== ""){
-                 note.value = newValue;
-            }
-
-             note.date = now.toLocaleString()
-
-            render();
-
+            render.call(notes);
             
         })
 
            dlt.addEventListener("click",()=>{
             console.log(" delete button clicked");
             notes.splice(index,1);
-            render();
+            render.call(notes);
         })
-
-
-        // update the title
 
 
     singleDiv.appendChild(titleMain);
     singleDiv.appendChild(date);
     singleDiv.appendChild(content);
-   
+    
 
     btn.appendChild(upd);
     btn.appendChild(dlt);

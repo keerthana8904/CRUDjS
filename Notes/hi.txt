@@ -1,0 +1,22 @@
+  upd.addEventListener("click",()=>{
+            console.log(" update button clicked");
+            
+            let newTitle = prompt(`Update the Title:`,note.title);
+            let newValue = prompt(`Update the Note:`,note.value);
+
+            let now = new Date();
+        
+            if(newTitle  && newTitle.trim() !== ""){
+                note.title = newTitle;
+            };
+
+            if(newValue  && newValue.trim() !== ""){
+                 note.value = newValue;
+            }
+
+             note.date = now.toLocaleString()
+
+            render();
+
+            
+        })

@@ -7,7 +7,16 @@ body{
     justify-content: center;
     
 }
+#searchLabel{
+    margin-left: 50px;
+}
 
+#searchBtn{
+  
+    background: #fbf6d0;
+    border: none;
+    border-radius: 20px;;
+}
 #btn{
     margin-top: 20px;
     background: #eaf1bb;

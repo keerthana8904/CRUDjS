@@ -5,27 +5,42 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #fadada;
     
+}
+
+input{
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    height: 20px;
+    margin: 3px;
 }
 #searchLabel{
     margin-left: 50px;
 }
 
-#searchBtn{
-  
+#searchBar{
     background: #fbf6d0;
     border: none;
     border-radius: 20px;;
+    width: 50px;
+    font-size: smaller;
 }
+
 #btn{
+    position: relative;
+    left: 420px;
+    bottom: 70px;;
     margin-top: 20px;
     background: #eaf1bb;
     border: none;
-    border-radius: 20px;;
+    border-radius: 20px;
+   
 }
 
 #titleMain{
-    margin-bottom: 15px;
+    margin: 15px;
 }
 
 .oneNote{
@@ -36,7 +51,7 @@ body{
     border-radius: 20px;
     padding: 20px;
     color: green;
-    background: #e8d8d8;   
+    background: #f0f2fa;   
 }
 
 .btns{
@@ -92,9 +107,5 @@ body{
     width: 400px;
 }
 
-#btn{
-    position: relative;
-    bottom: 20px;
-    width: 15vwvw;
-}
+
 

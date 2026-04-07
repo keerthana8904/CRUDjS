@@ -39,7 +39,8 @@ function seacrch(){
 
     if(searchValue.trim() === ""){
         render.call(notes);
-        alert(`please enter title to be seach`)
+        alert(`please enter title to be seach`);
+        return;
     }
     
 // search by letters
@@ -53,7 +54,6 @@ function seacrch(){
    }else{
     render.call(found);
    }
-
    
 }
 
@@ -103,13 +103,20 @@ function render(){
 
         upd.addEventListener("click",()=>{
             console.log(" update button clicked");
+            
+            let newtite = prompt(`Update the title`,note.title)
             let newValue = prompt(`Update the value:`,note.value);
 
+
             let now = new Date();
+
+            if(newtite  && newtite.trim() !== ""){
+             note.title = newtite;
+            };
             if(newValue  && newValue.trim() !== ""){
              note.value = newValue;
-             note.date = now.toLocaleString()
             };
+             note.date = now.toLocaleString()
 
             render.call(notes);
             
@@ -137,10 +144,7 @@ function render(){
 
     lists.appendChild(oneNote)
 
-    });
-
-
-  
+    }); 
     
 }
 add.addEventListener("click",craeteNote);
